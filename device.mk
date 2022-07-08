@@ -72,7 +72,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libandroidicu \
     libdrm \
     libhardware_legacy \
-    lincap \
+    libcap \
     libdisplayconfig.qti \
     libion \
     libxml2 \
