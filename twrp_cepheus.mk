@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2021 The TWRP Open Source Project
+# Copyright 2018 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,27 +16,24 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := cepheus
+DEVICE_PATH := device/xiaomi/cepheus
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Inherit from pyxis device
-$(call inherit-product, device/xiaomi/cepheus/device.mk)
+# for the amended f2fs command
+# casefolding causes encryption problems with f2fs formatting on Android 12
+# so disable this
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Inherit some common TWRP stuff.
+# Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/xiaomi/cepheus/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cepheus
 PRODUCT_NAME := twrp_cepheus
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Xiaomi Mi 9
+PRODUCT_MODEL := Mi 9
 PRODUCT_MANUFACTURER := Xiaomi
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
-    ro.product.device \
-    ro.product.name \
-    ro.build.product \
-    ro.bootimage.build.date.utc \
-    ro.build.date.utc
