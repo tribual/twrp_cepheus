@@ -1,5 +1,5 @@
 #
-# Copyright 2018 The Android Open Source Project
+# Copyright 2022 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,16 +20,13 @@ DEVICE_PATH := device/xiaomi/cepheus
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# for the amended f2fs command
-# casefolding causes encryption problems with f2fs formatting on Android 12
-# so disable this
-# $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/cepheus/device.mk)
+
+$(call inherit-product, device/xiaomi/cepheus/FBEv2.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cepheus

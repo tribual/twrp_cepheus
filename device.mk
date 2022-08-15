@@ -1,5 +1,5 @@
 #
-# Copyright 2018 The Android Open Source Project
+# Copyright 2022 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,34 +13,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/opensource/commonsys-intf/display
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
+BOARD_USES_QCOM_FBE_DECRYPTION := true
+BOARD_USES_METADATA_PARTITION := true
 
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := cepheus
-
-# Boot Hal 1.2
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2.system
-
 # platform
-PLATFORM_VERSION := 16.1.0
-PLATFORM_SECURITY_PATCH := 2127-12-31
+PLATFORM_VERSION := 127
+PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
+PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
+BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+#TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_DEVICE_MODULES += libion vendor.display.config@1.0 vendor.display.config@2.0 libdisplayconfig.qti
+
+PRODUCT_SOONG_NAMESPACES += \
+vendor/qcom/opensource/commonsys-intf/display
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -62,9 +60,6 @@ TARGET_USES_MKE2FS := true
 TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := true
 
-# include python, for ABX conversion
-TW_INCLUDE_PYTHON := true
-
 # Vibrator
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 
@@ -73,7 +68,4 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libdisplayconfig.qti.so \
-
-PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/target/product/cepheus/system/lib64/android.hardware.boot@1.2.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/android.hardware.boot@1.2.so
  
