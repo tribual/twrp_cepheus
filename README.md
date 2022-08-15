@@ -1,17 +1,28 @@
-# android_device_xiaomi_cepheus
-For building TWRP for Xiaomi Mi 9
+# Device tree for Mi 9 (codenamed _"cepheus"_)
 
-TWRP device tree for Xiaomi Mi 9
+### Device specifications
 
-## Features
+| Device                  | Xiaomi Mi 9                                                   |
+| ----------------------: | :------------------------------------------------------------ |
+| SoC                     | Qualcomm SDM855 Snapdragon 855                                |
+| CPU                     | 1x2.84 GHz Kryo 485 + 3x2.4 GHz Kryo 485 + 4x1.8 GHz Kryo 485 |
+| GPU                     | Adreno 640                                                    |
+| Memory                  | 6GB / 8GB RAM (LPDDR4X)                                       |
+| Shipped Android version | 9.0                                                           |
+| Storage                 | 64GB / 128GB / 256GB UFS 2.1 flash storage                    |
+| Battery                 | Non-removable Li-Po 3300 mAh                                  |
 
-TO DO: 
+### Features 
+**Works**
 
--ADB
--Encryption
--UI
+- Booting.
+- **Decryption** (Android 12)
+- ADB
+- MTP
+- OTG
+- Vibration
 
-## Compile
+### Compile
 
 First checkout minimal twrp tree:
 
@@ -30,8 +41,7 @@ Finally execute these:
 
 ```
 . build/envsetup.sh
-lunch twrp_cepheus-eng
-mka recoveryimage
+lunch twrp_cepheus-eng && mka recoveryimage
 ```
 
 To test it:
