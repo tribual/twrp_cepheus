@@ -34,7 +34,7 @@ repo sync
 Then add these projects to .repo/manifest.xml:
 
 ```xml
-<project path="device/xiaomi/cepheus" name="JoK3rLeE/twrp_device_xiaomi_cepheus" remote="github" revision="android-12.1" />
+<project path="device/xiaomi/cepheus" name="JoK3rLeE/twrp_device_xiaomi_cepheus" remote="github" revision="android-12" />
 ```
 
 Finally execute these:
