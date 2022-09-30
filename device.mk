@@ -63,6 +63,18 @@ TARGET_USES_MKE2FS := true
 TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := true
 
+# Spoofed Shipping API for FBEv2
+  PRODUCT_SHIPPING_API_LEVEL := 30
+
+# fscrypt policy
+   TW_USE_FSCRYPT_POLICY := 2
+
+# Props for a Successful Casefold Format 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.dm_default_key.options_format.version=2 \
+    ro.crypto.volume.metadata.method=dm-default-key \
+    ro.crypto.volume.options=::v2 
+
 # Vibrator
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 

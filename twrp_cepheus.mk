@@ -26,7 +26,8 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/cepheus/device.mk)
 
-$(call inherit-product, device/xiaomi/cepheus/FBEv2.mk)
+# Casefolding
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cepheus
