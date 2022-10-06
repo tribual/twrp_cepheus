@@ -42,7 +42,7 @@ PRODUCT_SOONG_NAMESPACES += \
 vendor/qcom/opensource/commonsys-intf/display
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := FBEv2 Legacy (WIP)
+TW_DEVICE_VERSION := Legacy (Spark)
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
