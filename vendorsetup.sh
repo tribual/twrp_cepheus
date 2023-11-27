@@ -55,9 +55,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_REPLACE_BUSYBOX_PS=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800"; # Tue Nov 14 15:20:00 GMT 2017
-	export OF_NO_SAMSUNG_SPECIAL=1
+	export FOX_NO_SAMSUNG_SPECIAL=1
 	export OF_MAINTAINER="chematelegram"
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v25.2.zip
 	export FOX_ENABLE_APP_MANAGER=1
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export LC_ALL="C"
@@ -67,9 +66,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
   	export OF_HIDE_NOTCH=1
 	export OF_UNBIND_SDCARD_F2FS=1
-        export OF_VANILLA_BUILD=1
 	export OF_NO_MIUI_PATCH_WARNING=1
-	export OF_PATCH_VBMETA_FLAG=1
+	export FOX_PATCH_VBMETA_FLAG=1
+        export OF_FBE_METADATA_MOUNT_IGNORE=1
+        export OF_DEFAULT_TIMEZONE="CET"
+        export OF_DEFAULT_KEYMASTER_VERSION=4.0
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
