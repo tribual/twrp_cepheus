@@ -63,9 +63,6 @@ TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
 
-# Spoofed Shipping API for FBEv2
-  PRODUCT_SHIPPING_API_LEVEL := 30
-
 # fscrypt policy
    TW_USE_FSCRYPT_POLICY := 2
 
