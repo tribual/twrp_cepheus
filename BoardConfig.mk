@@ -70,7 +70,8 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 QCOM_BOARD_PLATFORMS += msmnile
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 \
+BOARD_KERNEL_CMDLINE := \
+        console=ttyMSM0,115200n8 \
 	androidboot.hardware=qcom \
 	androidboot.console=ttyMSM0 \
 	androidboot.memcg=1 \
@@ -82,7 +83,8 @@ BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 \
 	androidboot.usbcontroller=a600000.dwc3 \
 	earlycon=msm_geni_serial,0xa90000 \
 	androidboot.usbconfigfs=true \
-	androidboot.selinux=permissive
+	androidboot.selinux=permissive \
+        androidboot.boot_devices=soc/1d84000.ufshc
 
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
