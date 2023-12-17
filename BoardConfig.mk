@@ -60,10 +60,6 @@ TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 
-# Fstab and flags
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/fstab/recovery.fstab
-PRODUCT_COPY_FILES += $(DEVICE_PATH)/fstab/twrp.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags
-
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
@@ -152,10 +148,6 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-
-# Recovery
-BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi

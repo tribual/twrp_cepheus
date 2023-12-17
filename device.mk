@@ -33,6 +33,8 @@ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Recovery
+BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_DEVICE_MODULES += libion libxml2 libicuuc vendor.display.config@1.0 vendor.display.config@2.0 libdisplayconfig.qti
 
