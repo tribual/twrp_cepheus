@@ -29,7 +29,7 @@ import /init.recovery.qcom_decrypt.rc
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice  	
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 	
 service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
     user root
@@ -41,4 +41,4 @@ service vendor.qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
 on boot
     start vendor.qti.vibrator
     setprop sys.usb.config adb
-
+    start health-hal-2-1
