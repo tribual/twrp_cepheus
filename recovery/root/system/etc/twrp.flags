@@ -9,7 +9,7 @@
 /vbmeta         emmc     /dev/block/by-name/vbmeta                               flags=backup=1;display="Vbmeta";flashimg=1
 
 /metadata       ext4     /dev/block/bootdevice/by-name/metadata			 flags=backup=1;display="Metadata"
-/data           f2fs     /dev/block/bootdevice/by-name/userdata                  flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption,quota,checkpoint=fs
+/data           ext4     /dev/block/bootdevice/by-name/userdata                  flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption,quota
 
 /system_image   emmc     /dev/block/bootdevice/by-name/system                    flags=backup=1;display="System_image";flashimg=1
 /vendor_image   emmc     /dev/block/bootdevice/by-name/vendor                    flags=backup=1;display="Vendor_image";flashimg=1
