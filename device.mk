@@ -25,13 +25,6 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock.recovery \
     fastbootd
 
-# platform
-PLATFORM_VERSION := 99.87.36
-PLATFORM_SECURITY_PATCH := 2127-12-31
-VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
-PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
-BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
-
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
@@ -41,14 +34,14 @@ TARGET_RECOVERY_DEVICE_MODULES += libion libxml2 libicuuc vendor.display.config@
 PRODUCT_SOONG_NAMESPACES += \
 vendor/qcom/opensource/commonsys-intf/display
 
-# fscrypt policy
-   TW_USE_FSCRYPT_POLICY := 2
-
 # Props for a Successful Casefold Format
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.dm_default_key.options_format.version=2 \
     ro.crypto.volume.metadata.method=dm-default-key \
     ro.crypto.volume.options=::v2
+
+# Spoofed Shipping API for FBEv2
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Vibrator
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
