@@ -155,7 +155,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := cepheus-retrofit
+TW_DEVICE_VERSION := cepheus-retrofit-erofs
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
